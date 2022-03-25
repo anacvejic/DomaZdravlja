@@ -1,0 +1,80 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Resource> localizer
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/angularjs/angular.js"></script>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <style>
+        .navbar-default {
+            margin: 0px auto;
+            width: 90%;
+        }
+
+        .container {
+            margin: 0px auto;
+            width: 90%;
+            margin-top: 2%;
+        }
+
+        #foot {
+            margin: 0px auto;
+            width: 90%;
+            margin-top: 5%;
+            color: lightskyblue;
+        }
+        #ll {
+            margin-left:900px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid" style="background-color:black;">
+            <div class="navbar-header">
+                <a asp-area="" asp-controller="Administrator" asp-action="Index" class="navbar-brand" style="color: lightskyblue;">@localizer["Lekari"]</a>
+                <a asp-area="" asp-controller="Administrator" asp-action="MedicinskeSestre" class="navbar-brand" style="color: lightskyblue;">@localizer["MedicinskeSestre"]</a>
+                <a asp-area="" asp-controller="Administrator" asp-action="Pacijenti" class="navbar-brand" style="color: lightskyblue;">@localizer["Pacijenti"]</a>
+                <a asp-area="" asp-controller="Administrator" asp-action="IzlogujSE" class="navbar-brand" style="color: lightskyblue;" id="ll">@localizer["IzlogujSE"]</a>
+               
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <ul class="list-inline col-md-1 text-center" style="color: whitesmoke; background-color:lightgray;margin-bottom:5%;">
+                <li>
+                    @Html.ActionLink("en", "SetCulture", "Administrator", new { culture = "en", sourceUrl =
+           Microsoft.AspNetCore.Http.Extensions.UriHelper.GetDisplayUrl(Context.Request) }, null)
+
+                </li>
+                <li>
+                    @Html.ActionLink("sr", "SetCulture", "Administrator", new { culture = "sr", sourceUrl =
+            Microsoft.AspNetCore.Http.Extensions.UriHelper.GetDisplayUrl(Context.Request) }, null)
+
+                </li>
+            </ul>
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <footer class="row" id="foot">
+        <p class="text-center" style="background-color:black;">Ana Cvejić Napredne WEB Tehnologije 2021</p>
+    </footer>
+</body>
+</html>
+

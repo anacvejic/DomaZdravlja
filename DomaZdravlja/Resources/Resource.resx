@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddNurse" xml:space="preserve">
+    <value>Dodaj medicinsku sestru</value>
+  </data>
+  <data name="Aktivnost" xml:space="preserve">
+    <value>Aktivnost</value>
+  </data>
+  <data name="Brisanje" xml:space="preserve">
+    <value>Brisanje</value>
+  </data>
+  <data name="Dobrodosli" xml:space="preserve">
+    <value>Dobrodošli</value>
+  </data>
+  <data name="DodajLekara" xml:space="preserve">
+    <value>Dodaj lekara</value>
+  </data>
+  <data name="DodajSestru" xml:space="preserve">
+    <value>Dodaj sestru</value>
+  </data>
+  <data name="DodavanjeLekara" xml:space="preserve">
+    <value>Dodavanje lekara</value>
+  </data>
+  <data name="DugmeLogovanje" xml:space="preserve">
+    <value>Uloguj se</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EmailKorisnika" xml:space="preserve">
+    <value>Morate uneti e-mail korisnika</value>
+  </data>
+  <data name="EmailPlaceHolder" xml:space="preserve">
+    <value>E-mail...</value>
+  </data>
+  <data name="EmailRegex" xml:space="preserve">
+    <value>E mail mora biti u formatu e-maila, do 20 karaktera</value>
+  </data>
+  <data name="HederMedicinskaSestra" xml:space="preserve">
+    <value>Dodaj medicinsku sestru</value>
+  </data>
+  <data name="HederModalDodajSestru" xml:space="preserve">
+    <value>Dodavanje medicinske sestre</value>
+  </data>
+  <data name="Ime" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="ImeKorisnika" xml:space="preserve">
+    <value>Morate uneti ime korisnika</value>
+  </data>
+  <data name="ImeRegex" xml:space="preserve">
+    <value>Ime mora biti u formatu malih i velikog slova 3-20 karaktera</value>
+  </data>
+  <data name="Lekari" xml:space="preserve">
+    <value>Lekari</value>
+  </data>
+  <data name="LekariLekari" xml:space="preserve">
+    <value>Lekari...</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Uloguj se</value>
+  </data>
+  <data name="MedicinskeSestre" xml:space="preserve">
+    <value>Medicinske sestre</value>
+  </data>
+  <data name="Otkaži" xml:space="preserve">
+    <value>Otkaži</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password-Šifra</value>
+  </data>
+  <data name="PasswordKorisnika" xml:space="preserve">
+    <value>Morate uneti sifru-password</value>
+  </data>
+  <data name="PasswordPlaceHolder" xml:space="preserve">
+    <value>Password...</value>
+  </data>
+  <data name="PasswordRegex" xml:space="preserve">
+    <value>Password Sifra mora biti u formatu veliko slovo, mala slova brojevi</value>
+  </data>
+  <data name="PlaceholderEmail" xml:space="preserve">
+    <value>E-mail lekara...</value>
+  </data>
+  <data name="PlaceHolderEmailSestre" xml:space="preserve">
+    <value>E-amil...</value>
+  </data>
+  <data name="PlaceholderIme" xml:space="preserve">
+    <value> Ime lekra...</value>
+  </data>
+  <data name="Placeholderpassword" xml:space="preserve">
+    <value>Password lekara</value>
+  </data>
+  <data name="PlaceHolderPasswordSestre" xml:space="preserve">
+    <value>Password...</value>
+  </data>
+  <data name="PlaceholderPrezime" xml:space="preserve">
+    <value>Prezime lekara...</value>
+  </data>
+  <data name="PlaceHolderprezimeSestre" xml:space="preserve">
+    <value>Prezime sestre...</value>
+  </data>
+  <data name="PlaceHolderSearchDoctor" xml:space="preserve">
+    <value>Pretražite lekare...</value>
+  </data>
+  <data name="PlaceHolderSearchMedicinskeSestre" xml:space="preserve">
+    <value>Pretražite sestre...</value>
+  </data>
+  <data name="PlaceHolderSestraIme" xml:space="preserve">
+    <value>Ime sestre...</value>
+  </data>
+  <data name="PlaceholderSpecijalnost" xml:space="preserve">
+    <value>Specijalnost lekara</value>
+  </data>
+  <data name="PlaceHolderSpecijalnostMedicinske" xml:space="preserve">
+    <value>Specijalnost...</value>
+  </data>
+  <data name="Prezime" xml:space="preserve">
+    <value>Prezime</value>
+  </data>
+  <data name="PrezimeKorisnika" xml:space="preserve">
+    <value>Morate uneti prezime korisnika</value>
+  </data>
+  <data name="PrezimeRegex" xml:space="preserve">
+    <value>Prezime mora biti u formatu malih i velikog slova 3-20 karaktera</value>
+  </data>
+  <data name="RedirekcijaKorisnika" xml:space="preserve">
+    <value>Korisnik ne postoji u bazu / pogrešan e-mail ili password</value>
+  </data>
+  <data name="SestreSestre" xml:space="preserve">
+    <value>Medicinske sestre...</value>
+  </data>
+  <data name="Specijalnost" xml:space="preserve">
+    <value>Specijalnost</value>
+  </data>
+  <data name="SpecijalnostKorisnika" xml:space="preserve">
+    <value>Morate uneti specijalnost korisnika</value>
+  </data>
+  <data name="SpecijalnostRegex" xml:space="preserve">
+    <value>Specijalnost korisnika mora biti u formatu veliko prvo slovo, mala slova i razmaci</value>
+  </data>
+  <data name="UlogujteSe" xml:space="preserve">
+    <value>Ulogujte se</value>
+  </data>
+  <data name="BrojKnjizica" xml:space="preserve">
+    <value>Broj knjižice</value>
+  </data>
+  <data name="BrojKnjizice" xml:space="preserve">
+    <value>Broj knjižice je obavezan</value>
+  </data>
+  <data name="DatumKartona" xml:space="preserve">
+    <value>Datum otvaranja kartona</value>
+  </data>
+  <data name="Doktori" xml:space="preserve">
+    <value>Doktori</value>
+  </data>
+  <data name="ImeKartonPacijent" xml:space="preserve">
+    <value>Ime pacijenta je obavezno...</value>
+  </data>
+  <data name="ImePacijenta" xml:space="preserve">
+    <value>Ime pacijenta</value>
+  </data>
+  <data name="IzborLekara" xml:space="preserve">
+    <value>Izaberite lekara</value>
+  </data>
+  <data name="KartonOtvaranje" xml:space="preserve">
+    <value>Otvaranje kartona</value>
+  </data>
+  <data name="PrezimePacijent" xml:space="preserve">
+    <value>Prezime pacijenta</value>
+  </data>
+  <data name="PrezimePacijenta" xml:space="preserve">
+    <value>Prezime pacijenta je obavezno...</value>
+  </data>
+  <data name="BrojKnjiziceRegex" xml:space="preserve">
+    <value>Broj knjizice mora imati od 6-15 brojeva!</value>
+  </data>
+  <data name="DodajKarton" xml:space="preserve">
+    <value>Unesi</value>
+  </data>
+  <data name="Pacijenti" xml:space="preserve">
+    <value>Pacijenti...</value>
+  </data>
+  <data name="UspehDodavanjaKartona" xml:space="preserve">
+    <value>Uspešno ste dodali novog pacijenta</value>
+  </data>
+  <data name="ImenaKorisnika" xml:space="preserve">
+    <value>Izmeni podatke pacijenta</value>
+  </data>
+  <data name="LekarOdabrani" xml:space="preserve">
+    <value>Odabrani lekar</value>
+  </data>
+  <data name="ImePrezimeIzabranogLekara" xml:space="preserve">
+    <value>Izabrani  lekar</value>
+  </data>
+  <data name="Karonipacijenta" xml:space="preserve">
+    <value>Kartoni pacijenta...</value>
+  </data>
+  <data name="PlaceHolderSearchPatient" xml:space="preserve">
+    <value>Pacijenti...</value>
+  </data>
+  <data name="IzmenaPcijenta" xml:space="preserve">
+    <value>Izmena pacijenta</value>
+  </data>
+  <data name="Pregledipacijenata" xml:space="preserve">
+    <value>Pregledi pacijenata...</value>
+  </data>
+  <data name="PregledPacijenata" xml:space="preserve">
+    <value>Pregledi pacijenata</value>
+  </data>
+  <data name="AktivanPregled" xml:space="preserve">
+    <value>Aktivan pregled</value>
+  </data>
+  <data name="BrojKartona" xml:space="preserve">
+    <value>Broj kartona</value>
+  </data>
+  <data name="DatumIVremePregleda" xml:space="preserve">
+    <value>Datum i vreme pregleda</value>
+  </data>
+  <data name="StorniranjePregleda" xml:space="preserve">
+    <value>Izmena pregleda</value>
+  </data>
+  <data name="PlaceHolderSearchPregledi" xml:space="preserve">
+    <value>Pretraga ppacijenata i pregleda...</value>
+  </data>
+  <data name="ZakazivanjePregleda" xml:space="preserve">
+    <value>Zakazivanje pregleda</value>
+  </data>
+  <data name="DatumVremePregleda" xml:space="preserve">
+    <value>Datum i vreme</value>
+  </data>
+  <data name="DodajPregled" xml:space="preserve">
+    <value>Unesi pregled</value>
+  </data>
+  <data name="IdKarton" xml:space="preserve">
+    <value>Broj kartona</value>
+  </data>
+  <data name="PlaceholderIdKarton" xml:space="preserve">
+    <value>Broj kartona...</value>
+  </data>
+  <data name="IzlogujSE" xml:space="preserve">
+    <value>Izloguj se</value>
+  </data>
+  <data name="PacijentiPregled" xml:space="preserve">
+    <value>Pacijenti...</value>
+  </data>
+  <data name="NeuspexDodavanjaKartona" xml:space="preserve">
+    <value>Niste uneli karton, pokušajte ponovo</value>
+  </data>
+  <data name="DatumOtvaranjaKartona" xml:space="preserve">
+    <value>Datum otvaranja kartona je obavezan</value>
+  </data>
+  <data name="DatunVremeObavezno" xml:space="preserve">
+    <value>Morate selektovati datum i vreme!</value>
+  </data>
+  <data name="BrojKnjiziceNePOstojiUBazi" xml:space="preserve">
+    <value>Broj knjizice koji ste uneli ne postoji u bazi!</value>
+  </data>
+  <data name="BrojKnjiziceNeSmeBitiPrazan" xml:space="preserve">
+    <value>Broj knjizice ne sme biti prazan i mora biti broj!</value>
+  </data>
+  <data name="BrojKnjiziceObavezan" xml:space="preserve">
+    <value>Broj knjizice je obavezan!</value>
+  </data>
+  <data name="BrojKnjiziceRegexJS" xml:space="preserve">
+    <value>Broj knjizice mora imati od 6-15 brojeva!</value>
+  </data>
+  <data name="Greska" xml:space="preserve">
+    <value>Greska</value>
+  </data>
+  <data name="NeuspehGreska" xml:space="preserve">
+    <value>Došlo je do greške, molimo Vas pokušajte ponovo!</value>
+  </data>
+  <data name="UspehPregled" xml:space="preserve">
+    <value>Uspesno ste zakazli pregled!</value>
+  </data>
+  <data name="DatumNeDozvoljeniOpseg" xml:space="preserve">
+    <value>Morate izabrati datum za tekuću godinu!</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="DaLiSteSigurniUBrisanje" xml:space="preserve">
+    <value>Da li ste sigurni da zelite da obrisete</value>
+  </data>
+  <data name="GetPacijenti" xml:space="preserve">
+    <value>GetPacijenti</value>
+  </data>
+  <data name="IzmenaPodatkapacijenata" xml:space="preserve">
+    <value>Uspesno ste izmenili podatke pacijenta!</value>
+  </data>
+  <data name="Pacijenta" xml:space="preserve">
+    <value>pacijenta?</value>
+  </data>
+  <data name="PregledipacijenataP" xml:space="preserve">
+    <value>Pregledipacijenata</value>
+  </data>
+  <data name="UspehBrisanje" xml:space="preserve">
+    <value>Izabrani pacijent je obrisan!</value>
+  </data>
+  <data name="DodavanjeLekaraUspeh" xml:space="preserve">
+    <value>Uspesno ste uneli doktora u bazu!</value>
+  </data>
+  <data name="LekarNeaktivan" xml:space="preserve">
+    <value>Izabrani lekar vise nije aktivan!</value>
+  </data>
+  <data name="NeaktivnaMedSestra" xml:space="preserve">
+    <value>Izabrani/a medicinska sestra vise nije aktivan</value>
+  </data>
+  <data name="PotvrdaBrisanjaLekar1" xml:space="preserve">
+    <value>Da li ste sigurni da zelite da doktor</value>
+  </data>
+  <data name="PotvrdaBrisanjaLekar2" xml:space="preserve">
+    <value>bude neaktivan?</value>
+  </data>
+  <data name="PotvrdaBrisanjaMedSestra1" xml:space="preserve">
+    <value>Da li ste sigurni da zelite da medicinska sestra</value>
+  </data>
+  <data name="PotvrdaBrisanjaMedSestra2" xml:space="preserve">
+    <value>bude neaktivan/a?</value>
+  </data>
+  <data name="UspehUnosaMedSestre" xml:space="preserve">
+    <value>Uspesno ste uneli medicinsku sestru u bazu!</value>
+  </data>
+  <data name="StornirajPregled" xml:space="preserve">
+    <value>Storniraj pregled</value>
+  </data>
+  <data name="StorniraniPregled1" xml:space="preserve">
+    <value>Da li ste sigurni da zelite da stornirate pregled?</value>
+  </data>
+  <data name="PacijentNeaktivan" xml:space="preserve">
+    <value>Pregled vise nije aktivan!</value>
+  </data>
+  <data name="DodajIzvestaj" xml:space="preserve">
+    <value>Dodaj izvestaj</value>
+  </data>
+  <data name="ImePacijent" xml:space="preserve">
+    <value>Ime pacijenta</value>
+  </data>
+  <data name="IzvestajPacijenta" xml:space="preserve">
+    <value>Izvestaj pacijenta</value>
+  </data>
+  <data name="LekarSpecijalista" xml:space="preserve">
+    <value>Lekar specijalista</value>
+  </data>
+  <data name="NazivUstanove" xml:space="preserve">
+    <value>Naziv ustanove</value>
+  </data>
+  <data name="NazivVrsteIzvestaja" xml:space="preserve">
+    <value>Naziv izvestaja</value>
+  </data>
+  <data name="OpisIzvestaj" xml:space="preserve">
+    <value>Opis izvestaja</value>
+  </data>
+  <data name="PrezimePacijen" xml:space="preserve">
+    <value>Prezime pacijenta</value>
+  </data>
+  <data name="nazivVrsteIzvestajaa" xml:space="preserve">
+    <value>Morate uneti naziv vrste izvestaja</value>
+  </data>
+  <data name="ErrorOpis" xml:space="preserve">
+    <value>Opis izvestaja je obavezan!</value>
+  </data>
+  <data name="nazivVrsteIzvestajaError" xml:space="preserve">
+    <value>Specijalnost korisnika mora biti u formatu veliko prvo slovo, mala slova i razmaci</value>
+  </data>
+  <data name="ErrorimePacijenta" xml:space="preserve">
+    <value>Ime pacijenta je obavezno!</value>
+  </data>
+  <data name="ErrorlekarSpecijalista" xml:space="preserve">
+    <value>Ime i prezime lekara specijaliste je obavezno!</value>
+  </data>
+  <data name="ErrornazivUstanove" xml:space="preserve">
+    <value>Naziv ustanove je obavezan!</value>
+  </data>
+  <data name="ErrorprezPrezimePacijenta" xml:space="preserve">
+    <value>Prezime pacijenta je obavezno!</value>
+  </data>
+  <data name="RegexErrorimePacijenta" xml:space="preserve">
+    <value>Ime pacijenta mora biti u formatu malih i velikog slova 3-20 karaktera</value>
+  </data>
+  <data name="RegexErrorlekarSpecijalista" xml:space="preserve">
+    <value>Ime i prezime lekara specijaliste mora biti u formatu slova 6-50 karaktera</value>
+  </data>
+  <data name="RegexNazivUstanove" xml:space="preserve">
+    <value>Naziv ustanove mora biti u formatu veliko prvo slovo, mala slova i razmaci</value>
+  </data>
+  <data name="UnesenIzvestaj" xml:space="preserve">
+    <value>Uspesno ste uneli izvestaj lekara specijaliste!</value>
+  </data>
+  <data name="BrojKnjiziceBroj" xml:space="preserve">
+    <value>Broj knjizice mora biti broj</value>
+  </data>
+  <data name="DaLiSteSigurniUBrisanjeTotalno" xml:space="preserve">
+    <value>Da li ste sigurni da zelite da obrisete</value>
+  </data>
+  <data name="PacijentaBrisanje" xml:space="preserve">
+    <value>iz baze podataka?</value>
+  </data>
+  <data name="ErrorPregledPacijenta" xml:space="preserve">
+    <value>Pregled je aktivan, pacijent ne moze biti obrisan!</value>
+  </data>
+  <data name="NeuspesnoBrisanje" xml:space="preserve">
+    <value>Greska!Pokusajte ponovo!</value>
+  </data>
+  <data name="BrisanjeTotalnoPacijenta" xml:space="preserve">
+    <value>Uspesno ste obrisali pacijenta iz baze!</value>
+  </data>
+</root>

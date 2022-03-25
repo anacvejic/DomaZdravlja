@@ -1,0 +1,110 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Resource> localizer
+@{
+    Layout = "~/Views/Shared/_MedicinskaSestra.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html ng-app="pregledi">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@localizer["PregledipacijenataP"]</title>
+</head>
+<body>
+    <div class="container wrapper" ng-controller="preglediPacijenata">
+        <div class="row">
+            @*Dugme za unos*@
+            <div class="col-md-3">
+                <div class="container" style="width:40%;margin-top:2%">
+                    <a href="#" class="btn btn-primary text-center" data-toggle="modal" data-target="#myModal" style="margin-bottom:2%; margin-left:2%;" id="dodajPregled">@localizer["ZakazivanjePregleda"]</a>
+                    <div class="modal fade" id="myModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">@localizer["ZakazivanjePregleda"]</h4>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span>x</span>
+                                    </button>
+                                </div>
+
+                                @*Modalna forma za zakazivanje pregleda*@
+                                <div class="modal-body">
+                                    <p id="uspex"class="text-success text-center" style="font-weight:bold;font-size:18px;"></p>
+                                    <p id="neuspeh" class="text-danger text-center" style="font-weight:bold;font-size:18px;"></p>
+                                    <div class="form-group">
+                                        <label for="DatumIvremePregleda">@localizer["DatumIVremePregleda"]</label>
+                                        <input type="datetime-local" class="form-control" name="DatumIvremePregleda" id="DatumIvremePregleda"/>
+                                        <p id="datumVreme" class="text-danger err"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="IdKarton">@localizer["IdKarton"]</label>
+                                        <input type="text" class="form-control" name="IdKarton" id="IdKarton" placeholder=@localizer["PlaceholderIdKarton"] />
+                                        <p id="idKarton" class="text-danger err"></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="otkazi">@localizer["Otkaži"]</button>
+                                        <input type="button" value=@localizer["DodajPregled"] class="btn btn-primary" id="unesi"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*Pretraga pacijenata*@
+            <div class="col-md-8">
+                <nav class="navbar navbar-light" style="background-color:#e3f2fd">
+                    <div class="alert input-group">
+                        <span class="input-group-btn">
+                            <input type="text" class="form-control" ng-model="search" placeholder=@localizer["PlaceHolderSearchPregledi"]>
+                        </span>
+                    </div>
+                </nav>
+            </div>
+
+            @*Svi pregledi pacijenata*@
+            <div class="col-md-12">
+                <h1 class="text-center" style="color:Highlight">@localizer["PregledPacijenata"]</h1>
+                <div class="table-responsive">
+                    <table class="table table-hover" ng-init="getPreglediPacijenata()">
+                        <tr style="font-weight:bold;">
+                            <td>@localizer["BrojKartona"]</td>
+                            <td>@localizer["BrojKnjizica"]</td>
+                            <td>@localizer["Ime"]</td>
+                            <td>@localizer["Prezime"]</td>
+                            <td>@localizer["DatumIVremePregleda"]</td>
+                            <td>@localizer["AktivanPregled"]</td>
+                            <td>@localizer["ImePrezimeIzabranogLekara"]</td>
+                            <td>@localizer["Specijalnost"]</td>
+                        </tr>
+                        <tr ng-repeat="x in pregledi | filter:search">
+                            <td hidden>
+                                <span>{{x.idPregleda}}</span>
+                            </td>
+                            <td>{{x.idKarton}}</td>
+                            <td>{{x.brojKnjizice}}</td>
+                            <td>{{x.ime}}</td>
+                            <td>{{x.prezime}}</td>
+                            <td>{{x.datumIvremePregleda}}</td>
+                            <td>{{x.aktivanPregled}}</td>
+                            <td>{{x.imeKorisnik}} {{x.prezimeKorisnik}}</td>
+                            <td>{{x.specijalnost}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/angularjs/angularjs-preglediPacijenata.js"></script>
+</body>
+</html>
+<script src="~/js/otvaranjeKartona.js"></script>
+<script>
+    var datumIVremeObavezno = "@localizer["DatunVremeObavezno"]";
+    var BrojKnjiziceNeSmeBitiPrazan = "@localizer["BrojKnjiziceNeSmeBitiPrazan"]";
+    var BrojKnjiziceNePOstojiUBazi = "@localizer["BrojKnjiziceNePOstojiUBazi"]";
+    var UspehPregled = "@localizer["UspehPregled"]";
+    var NeuspehGreska = "@localizer["NeuspehGreska"]";
+</script>

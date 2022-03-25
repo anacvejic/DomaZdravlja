@@ -1,0 +1,141 @@
+﻿
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Resource> localizer
+
+@{
+    Layout = "~/Views/Shared/_MedicinskaSestra.cshtml";
+}
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@localizer["GetPacijenti"]</title>
+    <script src="~/pagination/pagination.js"></script>
+    <style>
+        #page-selection {
+            margin: 0px auto;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container wrapper" ng-controller="myPatient">
+        <div class="row">
+            @*Izmena pacijenta*@
+            <div class="container" style="width:40%;margin-top:2%">
+                <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title text-center" id="editRadnika">@localizer["IzmenaPcijenta"]</h4>
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span>x</span>
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <form class="needs-validation" novalidate>
+                                    <input type="text" name="IdKarton" id="IdKarton" hidden />
+                                    <div class="form-group">
+                                        <label for="EditbrojKnjizice">@localizer["BrojKnjizica"]</label>
+                                        <input type="text" name="EditbrojKnjizice" id="EditbrojKnjizice" class="form-control" />
+                                        <p id="errorEditbrojKnjizice" class="text-danger"></p>
+                                    </div>
+
+                                    <div>
+                                        <label for="EditPrezime">@localizer["PrezimePacijent"]</label>
+                                        <input type="text" class="form-control" name="EditPrezime" id="EditPrezime" />
+                                        <p id="errorEditbrojPrezime" class="text-danger"></p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="IdKorisnik">@localizer["Doktori"]</label>
+                                        <select class="form-control" id="selectKorisnik" ng-init="GetLekari()">
+                                            <option ng-repeat="x in lekari" value="{{x.idKorisnik}}">{{x.ime}} {{x.prezime}}</option>
+                                        </select>   
+                                        <p id="erroIdKorisnik" class="text-danger"></p>
+                                    </div>
+
+                                </form>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="Edit">Otkaži</button>
+                                    <input type="button" value="Sacuvaj izmene" class="btn btn-primary" ng-click="editKartonPacijenta()"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            @*Pretraga lekara*@
+            <div class="col-md-12">
+                <nav class="navbar navbar-light" style="background-color:#e3f2fd">
+                    <div class="alert input-group">
+                        <span class="input-group-btn">
+                            <input type="text" class="form-control" ng-model="search" placeholder=@localizer["PlaceHolderSearchPatient"]>
+                        </span>
+                    </div>
+                </nav>
+            </div>
+
+            @*Svi lekari*@
+            <div class="col-md-12">
+                <h1 class="text-center" style="color:Highlight">@localizer["Karonipacijenta"]</h1>
+                <div class="table-responsive">
+                    <table class="table table-hover" ng-init="getPacijenti()">
+                        <tr style="font-weight:bold;">
+                            <td>@localizer["IdKarton"]</td>
+                            <td>@localizer["BrojKnjizica"]</td>
+                            <td>@localizer["Ime"]</td>
+                            <td>@localizer["Prezime"]</td>
+                            <td>@localizer["DatumKartona"]</td>
+                            <td>@localizer["ImePrezimeIzabranogLekara"]</td>
+                            <td>@localizer["Specijalnost"]</td>
+                            <td>@localizer["Brisanje"]</td>
+                            <td>@localizer["IzmenaPcijenta"]</td>
+                        </tr>
+                        <tr ng-repeat="x in pacijenti | filter:search">
+                            <td>{{x.idKarton}}</td>
+                            <td>{{x.brojKnjizice}}</td>
+                            <td>{{x.ime}}</td>
+                            <td>{{x.prezime}}</td>
+                            <td>{{x.datumOtvaranjaKartona}}</td>
+                            <td>{{x.imeK}} {{x.prezimeK}}</td>
+                            <td>{{x.specijalnost}}</td>
+                            <td>
+                                <a href="" ng-click="deleteKorisnik(x)" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="" class="btn btn-primary" ng-click="openEditPacijentModal(x)">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            @*<div id="page-selection"></div>*@
+        </div>
+    </div>
+    <script src="~/angularjs/angular-pacijenti.js"></script>
+</body>
+</html>
+<script>
+    var BrojKnjiziceObavezan = "@localizer["BrojKnjiziceObavezan"]";
+    var BrojKnjiziceRegexJS = "@localizer["BrojKnjiziceRegexJS"]";
+    var PrezimePacijenta = "@localizer["PrezimePacijenta"]";
+    var PrezimeRegex = "@localizer["PrezimeRegex"]";
+    var IzmenjenPacijent = "@localizer["IzmenjenPacijent"]";
+    var BrojKnjiziceBroj = "@localizer["BrojKnjiziceBroj"]";
+    var Greska = "@localizer["Greska"]";
+    var BrojKnjiziceRegexJS = "@localizer["BrojKnjiziceRegexJS"]";
+    var UspehBrisanje = { 'uspehBrisanje': '@localizer["UspehBrisanje"]' }
+    var IzmenaPodatkapacijenata = { 'izmenaPodatkapacijenata': '@localizer["IzmenaPodatkapacijenata"]' }
+    var DaLiSteSigurniUBrisanje = { 'daLiSteSigurniUBrisanje': '@localizer["DaLiSteSigurniUBrisanje"]' }
+    var Pacijenta = {'pacijenta':'@localizer["Pacijenta"]'}		
+</script>
+

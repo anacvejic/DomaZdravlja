@@ -1,0 +1,80 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Resource> localizer
+@model DomaZdravlja.Models.KartonPacijenta
+
+@{
+    Layout = "~/Views/Shared/_MedicinskaSestra.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@localizer["Index"]</title>
+    <style>
+        .prva {
+            margin: 0px auto;
+            width: 70%;
+            margin-left: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="prva" style="display:flex">
+        @if (ViewBag.UspehDodavanjaKorisnika != null)
+        {
+            <p class="text-success" style="font-weight:bold;margin-left:15%;">@ViewBag.UspehDodavanjaKorisnika</p>
+        }
+        @if (ViewBag.NeuspehDodavanjaKorisnika != null)
+        {
+            <p class="text-success text-center" style="font-weight:bold;margin-left:15%;">@ViewBag.NeuspehDodavanjaKorisnika</p>
+        }
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading text-center">@localizer["KartonOtvaranje"]</div>
+                <div class="panel-body">
+                    @using (Html.BeginForm("Index", "MedicinskaSestra", FormMethod.Post, new { @class = "form" }))
+                    {
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.BrojKnjizice, @localizer["BrojKnjizica"])
+                            @Html.TextBoxFor(m => m.BrojKnjizice, null, new { @class = "form-control", placeholder = @localizer["BrojKnjizice"] })
+                            @Html.ValidationMessageFor(m => m.BrojKnjizice, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Ime, @localizer["ImePacijenta"])
+                            @Html.TextBoxFor(m => m.Ime, null, new { @class = "form-control", placeholder = @localizer["ImeKartonPacijent"] })
+                            @Html.ValidationMessageFor(m => m.Ime, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Prezime, @localizer["PrezimePacijent"])
+                            @Html.TextBoxFor(m => m.Prezime, null, new { @class = "form-control", placeholder = @localizer["PrezimePacijenta"] })
+                            @Html.ValidationMessageFor(m => m.Prezime, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.DatumOtvaranjaKartona, @localizer["DatumKartona"])
+                            <input asp-for="DatumOtvaranjaKartona" type="date" name="DatumOtvaranjaKartona" class="form-control" id="DatumOtvaranjaKartona" />
+                            @Html.ValidationMessageFor(m => m.DatumOtvaranjaKartona, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="IdKorisnik">@localizer["Doktori"]</label>
+                            <select asp-for="IdKorisnik" id="selectKorisnik" name="IdKorisnik" class="form-control">
+                                <option value="0" class="form-control">@localizer["IzborLekara"]</option>
+                            </select>
+                            <p id="erroIdKorisnik err" class="text-danger"></p>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" id="DodajKarton" value=@localizer["DodajKarton"] />
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="~/js/otvaranjeKartona.js"></script>

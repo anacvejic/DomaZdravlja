@@ -1,0 +1,144 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Resource> localizer
+@model DomaZdravlja.Models.Korisnik
+@{
+    Layout = "~/Views/Shared/_Administrator.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/pagination/pagination.js"></script>
+    <style>
+        #page-selection {
+            margin: 0px auto;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container wrapper" ng-controller="myAdmin">
+        <div class="row">
+            @*Dugme za unos*@
+            <div class="col-md-4">
+                <div class="container" style="width:40%;margin-top:2%">
+                    <a href="#" class="btn btn-primary text-center" data-toggle="modal" data-target="#myModalS" style="margin-bottom:2%; margin-left:2%;" id="dodajR">@localizer["DodajLekara"]</a>
+                    <div class="modal fade" id="myModalS">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center" id="dodajRadnika">@localizer["DodajLekara"]</h4>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span>x</span>
+                                    </button>
+                                </div>
+
+                                @*Modalna forma za unos novog lekara*@
+                                <div class="modal-body">
+                                    <p id="bingo" class="text-success text-center"></p>
+                                    <div class="form-group">
+                                        <label for="Ime">@localizer["Ime"]</label>
+                                        <input type="text" class="form-control" ng-model="x.ime" name="Ime" id="Ime" placeholder=@localizer["PlaceholderIme"] />
+                                        <p id="ime" class="text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Prezime">@localizer["Prezime"]</label>
+                                        <input type="text" class="form-control" ng-model="x.prezime" name="Prezime" id="Prezime" placeholder=@localizer["PlaceholderPrezime"] />
+                                        <p id="prezime" class="text-danger"></p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="Email">@localizer["Email"]</label>
+                                        <input type="text" class="form-control" ng-model="x.email" name="Email" id="Email" placeholder=@localizer["PlaceholderEmail"] />
+                                        <p id="email" class="text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Password">@localizer["Password"]</label>
+                                        <input type="password" class="form-control" ng-model="x.password" name="Password" id="Password" placeholder=@localizer["Placeholderpassword"] />
+                                        <p id="pass" class="text-danger"></p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="Specijalnost">@localizer["Specijalnost"]</label>
+                                        <input type="text" class="form-control" ng-model="x.specijalnost" name="Specijalnost" id="Specijalnost" placeholder=@localizer["PlaceholderSpecijalnost"] />
+                                        <p id="spec" class="text-danger"></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="otkazi">@localizer["Otkaži"]</button>
+                                        <input type="button" value=@localizer["DodajLekara"] class="btn btn-primary" ng-click="SaveLekar()" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            @*Pretraga lekara*@
+            <div class="col-md-7">
+                <nav class="navbar navbar-light" style="background-color:#e3f2fd">
+                    <div class="alert input-group">
+                        <span class="input-group-btn">
+                            <input type="text" class="form-control" ng-model="search" placeholder=@localizer["PlaceHolderSearchDoctor"]>
+                        </span>
+                    </div>
+                </nav>
+            </div>
+
+            @*Svi lekari*@
+            <div class="col-md-12">
+                <h1 class="text-center" style="color:Highlight">@localizer["LekariLekari"]</h1>
+                <div class="table-responsive">
+                    <table class="table table-hover" ng-init="GetRadnici()">
+                        <tr style="font-weight:bold;">
+                            <td>@localizer["Ime"]</td>
+                            <td>@localizer["Prezime"]</td>
+                            <td>@localizer["Aktivnost"]</td>
+                            <td>@localizer["Specijalnost"]</td>
+                            <td>@localizer["Brisanje"]</td>
+                        </tr>
+                        <tr ng-repeat="x in details | filter:search">
+                            <td hidden>
+                                <span>{{x.idKarton}}</span>
+                            </td>
+                            <td>{{x.ime}}</td>
+                            <td>{{x.prezime}}</td>
+                            <td>{{x.aktivanKorisnik}}</td>
+                            <td>{{x.specijalnost}}</td>
+                            <td>
+                                <a href="" ng-click="deleteKorisnik(x)" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="page-selection"></div>
+          </div>  
+    </div>
+    <script src="~/angularjs/angularjs-adminDoktori.js"></script>
+</body>
+</html>
+<script>
+    var ImeKorisnika = "@localizer["ImeKorisnika"]";
+    var ImeRegex = "@localizer["ImeRegex"]";
+    var PrezimeKorisnika = "@localizer["PrezimeKorisnika"]";
+    var PrezimeRegex = "@localizer["PrezimeRegex"]";
+    var EmailKorisnika = "@localizer["EmailKorisnika"]";
+    var EmailRegex = "@localizer["EmailRegex"]";
+    var PasswordKorisnika = "@localizer["PasswordKorisnika"]";
+    var PasswordRegex = "@localizer["PasswordRegex"]";
+    var SpecijalnostKorisnika = "@localizer["SpecijalnostKorisnika"]";
+    var SpecijalnostRegex = "@localizer["SpecijalnostRegex"]";
+    var Greska = "@localizer["Greska"]";
+    var DodavanjeLekaraUspeh = { 'dodavanjeLekaraUspeh': '@localizer["DodavanjeLekaraUspeh"]' }
+    var PotvrdaBrisanjaLekar1 = { 'potvrdaBrisanjaLekar1': '@localizer["PotvrdaBrisanjaLekar1"]' }
+    var PotvrdaBrisanjaLekar2 = { 'potvrdaBrisanjaLekar2': '@localizer["PotvrdaBrisanjaLekar2"]' }
+    var LekarNeaktivan = {'lekarNeaktivan' : '@localizer["LekarNeaktivan"]'}
+</script>

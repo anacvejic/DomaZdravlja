@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddNurse" xml:space="preserve">
+    <value>Add nurse</value>
+  </data>
+  <data name="Aktivnost" xml:space="preserve">
+    <value>Activity</value>
+  </data>
+  <data name="Brisanje" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Dobrodosli" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="DodajLekara" xml:space="preserve">
+    <value>Add doctor</value>
+  </data>
+  <data name="DodajSestru" xml:space="preserve">
+    <value>Add nurse</value>
+  </data>
+  <data name="DodavanjeLekara" xml:space="preserve">
+    <value>Add doctor</value>
+  </data>
+  <data name="DugmeLogovanje" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EmailKorisnika" xml:space="preserve">
+    <value>E-mail is required</value>
+  </data>
+  <data name="EmailPlaceHolder" xml:space="preserve">
+    <value>E-mail...</value>
+  </data>
+  <data name="EmailRegex" xml:space="preserve">
+    <value>E-mail must be in format od mail, up to 20 characters</value>
+  </data>
+  <data name="HederMedicinskaSestra" xml:space="preserve">
+    <value>Add nurse</value>
+  </data>
+  <data name="HederModalDodajSestru" xml:space="preserve">
+    <value>Add nurse</value>
+  </data>
+  <data name="Ime" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="ImeKorisnika" xml:space="preserve">
+    <value>First name is required</value>
+  </data>
+  <data name="ImeRegex" xml:space="preserve">
+    <value>First name must be in format od small and big letters 3-20 characters</value>
+  </data>
+  <data name="Lekari" xml:space="preserve">
+    <value>Doctors</value>
+  </data>
+  <data name="LekariLekari" xml:space="preserve">
+    <value>Doctors...</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="MedicinskeSestre" xml:space="preserve">
+    <value>Nurses</value>
+  </data>
+  <data name="Otkaži" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordKorisnika" xml:space="preserve">
+    <value>Password is required</value>
+  </data>
+  <data name="PasswordPlaceHolder" xml:space="preserve">
+    <value>Password...</value>
+  </data>
+  <data name="PasswordRegex" xml:space="preserve">
+    <value>Password must be in format of big letters, small letters and numbers</value>
+  </data>
+  <data name="PlaceholderEmail" xml:space="preserve">
+    <value>E-mail...</value>
+  </data>
+  <data name="PlaceHolderEmailSestre" xml:space="preserve">
+    <value>E-mail...</value>
+  </data>
+  <data name="PlaceholderIme" xml:space="preserve">
+    <value>First name...</value>
+  </data>
+  <data name="Placeholderpassword" xml:space="preserve">
+    <value>Password...</value>
+  </data>
+  <data name="PlaceHolderPasswordSestre" xml:space="preserve">
+    <value>Password...</value>
+  </data>
+  <data name="PlaceholderPrezime" xml:space="preserve">
+    <value>Last name...</value>
+  </data>
+  <data name="PlaceHolderprezimeSestre" xml:space="preserve">
+    <value>Last name...</value>
+  </data>
+  <data name="PlaceHolderSearchDoctor" xml:space="preserve">
+    <value>Search doctor...</value>
+  </data>
+  <data name="PlaceHolderSearchMedicinskeSestre" xml:space="preserve">
+    <value>Search nurses...</value>
+  </data>
+  <data name="PlaceHolderSestraIme" xml:space="preserve">
+    <value>First name...</value>
+  </data>
+  <data name="PlaceholderSpecijalnost" xml:space="preserve">
+    <value>Speciality...</value>
+  </data>
+  <data name="PlaceHolderSpecijalnostMedicinske" xml:space="preserve">
+    <value>Speciakity...</value>
+  </data>
+  <data name="Prezime" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="PrezimeKorisnika" xml:space="preserve">
+    <value>Last name is required</value>
+  </data>
+  <data name="PrezimeRegex" xml:space="preserve">
+    <value>Last name must be in format od small and big letters 3-20 characters</value>
+  </data>
+  <data name="RedirekcijaKorisnika" xml:space="preserve">
+    <value>The user doesn't exist in data base / Wrong e-mail or password</value>
+  </data>
+  <data name="SestreSestre" xml:space="preserve">
+    <value>Nurses...</value>
+  </data>
+  <data name="Specijalnost" xml:space="preserve">
+    <value>Speciality</value>
+  </data>
+  <data name="SpecijalnostKorisnika" xml:space="preserve">
+    <value>Speciality of user is required</value>
+  </data>
+  <data name="SpecijalnostRegex" xml:space="preserve">
+    <value>Speciality of user must be in format first letter is big, small leters and spaces</value>
+  </data>
+  <data name="UlogujteSe" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="BrojKnjizica" xml:space="preserve">
+    <value>Number of medical card</value>
+  </data>
+  <data name="BrojKnjizice" xml:space="preserve">
+    <value>Number of card is required</value>
+  </data>
+  <data name="DatumKartona" xml:space="preserve">
+    <value>Date of file</value>
+  </data>
+  <data name="Doktori" xml:space="preserve">
+    <value>Doctors</value>
+  </data>
+  <data name="ImeKartonPacijent" xml:space="preserve">
+    <value>Name of patient is required...</value>
+  </data>
+  <data name="ImePacijenta" xml:space="preserve">
+    <value>First name of patient</value>
+  </data>
+  <data name="IzborLekara" xml:space="preserve">
+    <value>Choose a doctor</value>
+  </data>
+  <data name="KartonOtvaranje" xml:space="preserve">
+    <value>Add medical file</value>
+  </data>
+  <data name="PrezimePacijent" xml:space="preserve">
+    <value>Last name of patient</value>
+  </data>
+  <data name="PrezimePacijenta" xml:space="preserve">
+    <value>Last name of patient is required...</value>
+  </data>
+  <data name="BrojKnjiziceRegex" xml:space="preserve">
+    <value>Number of medical card must be  numbers 6 -15 characters</value>
+  </data>
+  <data name="DodajKarton" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Pacijenti" xml:space="preserve">
+    <value>Patient...</value>
+  </data>
+  <data name="UspehDodavanjaKartona" xml:space="preserve">
+    <value>New patient is add to database</value>
+  </data>
+  <data name="ImenaKorisnika" xml:space="preserve">
+    <value>Edit data of patient</value>
+  </data>
+  <data name="LekarOdabrani" xml:space="preserve">
+    <value>Doctor of pacient</value>
+  </data>
+  <data name="ImePrezimeIzabranogLekara" xml:space="preserve">
+    <value>Doctor of patient</value>
+  </data>
+  <data name="Karonipacijenta" xml:space="preserve">
+    <value>Patient medical file...</value>
+  </data>
+  <data name="PlaceHolderSearchPatient" xml:space="preserve">
+    <value>Patient...</value>
+  </data>
+  <data name="IzmenaPcijenta" xml:space="preserve">
+    <value>Edit patient</value>
+  </data>
+  <data name="Pregledipacijenata" xml:space="preserve">
+    <value>Pogledati kako se kaze</value>
+  </data>
+  <data name="PregledPacijenata" xml:space="preserve">
+    <value>Patient appointments</value>
+  </data>
+  <data name="AktivanPregled" xml:space="preserve">
+    <value>Active appointment</value>
+  </data>
+  <data name="BrojKartona" xml:space="preserve">
+    <value>Number of medical file</value>
+  </data>
+  <data name="DatumIVremePregleda" xml:space="preserve">
+    <value>Date and time of appointment</value>
+  </data>
+  <data name="StorniranjePregleda" xml:space="preserve">
+    <value>Change appointment</value>
+  </data>
+  <data name="PlaceHolderSearchPregledi" xml:space="preserve">
+    <value>Search appointment's of patient</value>
+  </data>
+  <data name="ZakazivanjePregleda" xml:space="preserve">
+    <value>Add appointment</value>
+  </data>
+  <data name="DatumVremePregleda" xml:space="preserve">
+    <value>Date and time</value>
+  </data>
+  <data name="DodajPregled" xml:space="preserve">
+    <value>Add appointment</value>
+  </data>
+  <data name="IdKarton" xml:space="preserve">
+    <value>Number of medical file</value>
+  </data>
+  <data name="PlaceholderIdKarton" xml:space="preserve">
+    <value>Number of medical card...</value>
+  </data>
+  <data name="IzlogujSE" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="NeuspexDodavanjaKartona" xml:space="preserve">
+    <value>Medical file didn't add, try again!</value>
+  </data>
+  <data name="DatumOtvaranjaKartona" xml:space="preserve">
+    <value>Date of file is required</value>
+  </data>
+  <data name="DatunVremeObavezno" xml:space="preserve">
+    <value>Date and time is required</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>fgsfhgsgs</value>
+  </data>
+  <data name="BrojKnjiziceNePOstojiUBazi" xml:space="preserve">
+    <value>The number of medical file does not exist in data base!</value>
+  </data>
+  <data name="BrojKnjiziceNeSmeBitiPrazan" xml:space="preserve">
+    <value>The number of medical file must be a number!</value>
+  </data>
+  <data name="BrojKnjiziceObavezan" xml:space="preserve">
+    <value>The number of medical file is required</value>
+  </data>
+  <data name="BrojKnjiziceRegexJS" xml:space="preserve">
+    <value>Number of medical card must be  numbers 6 -15 characters</value>
+  </data>
+  <data name="Greska" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="NeuspehGreska" xml:space="preserve">
+    <value>Error! Please try again!</value>
+  </data>
+  <data name="UspehPregled" xml:space="preserve">
+    <value>The medical appointment added</value>
+  </data>
+  <data name="DatumNeDozvoljeniOpseg" xml:space="preserve">
+    <value>You have to choose date for 2021 year!</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="GetPacijenti" xml:space="preserve">
+    <value>Getpatient</value>
+  </data>
+  <data name="IzmenaPodatkapacijenata" xml:space="preserve">
+    <value>The data of patient is change!</value>
+  </data>
+  <data name="PregledipacijenataP" xml:space="preserve">
+    <value>Appointment of patients</value>
+  </data>
+  <data name="UspehBrisanje" xml:space="preserve">
+    <value>The patient is deleted!</value>
+  </data>
+  <data name="DaLiSteSigurniUBrisanje" xml:space="preserve">
+    <value>Are you sure that you want to delete</value>
+  </data>
+  <data name="Pacijenta" xml:space="preserve">
+    <value>patient?</value>
+  </data>
+  <data name="DodavanjeLekaraUspeh" xml:space="preserve">
+    <value>The doctor is added!</value>
+  </data>
+  <data name="LekarNeaktivan" xml:space="preserve">
+    <value>The doctor is not active any more!</value>
+  </data>
+  <data name="NeaktivnaMedSestra" xml:space="preserve">
+    <value>The nurse is not active any more!</value>
+  </data>
+  <data name="PotvrdaBrisanjaLekar1" xml:space="preserve">
+    <value>Are you sure that you want deactivate the docotor</value>
+  </data>
+  <data name="PotvrdaBrisanjaLekar2" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="PotvrdaBrisanjaMedSestra1" xml:space="preserve">
+    <value>Are you sure that you want deactivate the nurse</value>
+  </data>
+  <data name="PotvrdaBrisanjaMedSestra2" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="UspehUnosaMedSestre" xml:space="preserve">
+    <value>The nurse is added!</value>
+  </data>
+  <data name="StornirajPregled" xml:space="preserve">
+    <value>Deactive appointment</value>
+  </data>
+  <data name="StorniraniPregled1" xml:space="preserve">
+    <value>Are you sure that you want to deactive appointment?</value>
+  </data>
+  <data name="PacijentNeaktivan" xml:space="preserve">
+    <value>Appointment is not active anymore!</value>
+  </data>
+  <data name="DodajIzvestaj" xml:space="preserve">
+    <value>Add report</value>
+  </data>
+  <data name="ImePacijent" xml:space="preserve">
+    <value>First name of patient</value>
+  </data>
+  <data name="IzvestajPacijenta" xml:space="preserve">
+    <value>Report of patient</value>
+  </data>
+  <data name="LekarSpecijalista" xml:space="preserve">
+    <value>Doctor specialist</value>
+  </data>
+  <data name="NazivUstanove" xml:space="preserve">
+    <value>Name of institution</value>
+  </data>
+  <data name="NazivVrsteIzvestaja" xml:space="preserve">
+    <value>Tittle of report</value>
+  </data>
+  <data name="OpisIzvestaj" xml:space="preserve">
+    <value>Description of report</value>
+  </data>
+  <data name="PrezimePacijen" xml:space="preserve">
+    <value>Last name of patient</value>
+  </data>
+  <data name="nazivVrsteIzvestajaa" xml:space="preserve">
+    <value>The name of group report is required</value>
+  </data>
+  <data name="ErrorOpis" xml:space="preserve">
+    <value>Description of report is required!</value>
+  </data>
+  <data name="nazivVrsteIzvestajaError" xml:space="preserve">
+    <value>Speciality of user must be in format first letter is big, small leters and spaces</value>
+  </data>
+  <data name="ErrorimePacijenta" xml:space="preserve">
+    <value>First name of patient is required!</value>
+  </data>
+  <data name="ErrorlekarSpecijalista" xml:space="preserve">
+    <value>First name and last name is required</value>
+  </data>
+  <data name="ErrornazivUstanove" xml:space="preserve">
+    <value>The name of institution is required!</value>
+  </data>
+  <data name="ErrorprezPrezimePacijenta" xml:space="preserve">
+    <value>Last name of patient is required!</value>
+  </data>
+  <data name="RegexErrorimePacijenta" xml:space="preserve">
+    <value>First name must be in format od small and big letters 3-20 characters</value>
+  </data>
+  <data name="RegexErrorlekarSpecijalista" xml:space="preserve">
+    <value>First and last name of doctor specialist must be in format of letters  6-50 </value>
+  </data>
+  <data name="RegexNazivUstanove" xml:space="preserve">
+    <value>The name of institution must be in format first letter is big, small leters and spaces</value>
+  </data>
+  <data name="UnesenIzvestaj" xml:space="preserve">
+    <value>The report of doctor specialist is added!</value>
+  </data>
+  <data name="BrojKnjiziceBroj" xml:space="preserve">
+    <value>Number of medical card must be a numbers</value>
+  </data>
+  <data name="DaLiSteSigurniUBrisanjeTotalno" xml:space="preserve">
+    <value>Are you sure that you want delete</value>
+  </data>
+  <data name="PacijentaBrisanje" xml:space="preserve">
+    <value>from data base?</value>
+  </data>
+  <data name="ErrorPregledPacijenta" xml:space="preserve">
+    <value>Appointment is still active, you can not delete a patient!</value>
+  </data>
+  <data name="NeuspesnoBrisanje" xml:space="preserve">
+    <value>Error! PLease try later!</value>
+  </data>
+  <data name="BrisanjeTotalnoPacijenta" xml:space="preserve">
+    <value>The patient  is deleted!</value>
+  </data>
+</root>

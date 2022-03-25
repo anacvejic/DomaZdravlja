@@ -1,0 +1,75 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Resource> localizer
+@{
+    Layout = "~/Views/Shared/_Administrator.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pacijenti</title>
+</head>
+<body>
+    <div class="container wrapper" ng-controller="myPatient">
+        <div class="row">
+            @*<p class="text-center text-danger" id="errorPregledPacijenta" style="font-weight:bold;font-size:large"></p>*@
+            @*Pretraga pacijenata*@
+            <div class="col-md-12">
+                <nav class="navbar navbar-light" style="background-color:#e3f2fd">
+                    <div class="alert input-group">
+                        <span class="input-group-btn">
+                            <input type="text" class="form-control" ng-model="search" placeholder=@localizer["PlaceHolderSearchPatient"]>
+                        </span>
+                    </div>
+                </nav>
+            </div>
+
+            @*Svi lekari*@
+            <div class="col-md-12">
+                <h1 class="text-center" style="color:Highlight">@localizer["Karonipacijenta"]</h1>
+                <div class="table-responsive">
+                    <table class="table table-hover" ng-init="getPacijenti()">
+                        <tr style="font-weight:bold;">
+                            <td>@localizer["BrojKnjizica"]</td>
+                            <td>@localizer["Ime"]</td>
+                            <td>@localizer["Prezime"]</td>
+                            <td>@localizer["DatumKartona"]</td>
+                            <td>@localizer["Aktivnost"]</td>
+                            <td>@localizer["ImePrezimeIzabranogLekara"]</td>
+                            <td>@localizer["Specijalnost"]</td>
+                            <td>@localizer["Brisanje"]</td>
+                        </tr>
+                        <tr ng-repeat="x in pacijenti | filter:search">
+                            <td hidden>
+                                <span>{{x.idKarton}}</span>
+                            </td>
+                            <td>{{x.brojKnjizice}}</td>
+                            <td>{{x.ime}}</td>
+                            <td>{{x.prezime}}</td>
+                            <td>{{x.datumOtvaranjaKartona}}</td>
+                            <td>{{x.aktivanKarton}}</td>
+                            <td>{{x.imeK}} {{x.prezimeK}}</td>
+                            <td>{{x.specijalnost}}</td>
+                            <td>
+                                <a href="" ng-click="deleteKorisnik(x)" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/angularjs/angularjs-adminPacijenti.js"></script>
+</body>
+</html>
+<script>
+    var DaLiSteSigurniUBrisanjeTotalno = { 'daLiSteSigurniUBrisanje': '@localizer["DaLiSteSigurniUBrisanje"]' };
+    var PacijentaBrisanje = { 'pacijentaBrisanje': '@localizer["PacijentaBrisanje"]' }
+    var ErrorPregledPacijenta = { 'errorPregledPacijenta': '@localizer["ErrorPregledPacijenta"]' };
+    var BrisanjeTotalnoPacijenta = { 'brisanjeTotalnoPacijenta': '@localizer["BrisanjeTotalnoPacijenta"]' }
+    var NeuspesnoBrisanje = {'neuspesnoBrisanje' : '@localizer["NeuspesnoBrisanje"]'};
+</script>
